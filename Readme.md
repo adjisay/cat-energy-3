@@ -2,6 +2,7 @@
 
 * Студент: [Александр Гурбанов](https://up.htmlacademy.ru/adaptive-individual/3/user/548235).
 * Наставник: [Андрей Грачев](https://htmlacademy.ru/profile/angra).
+* Сайт: [Cat Energy Project](https://adjisay.github.io/cat-energy-3/).
 
 ---
 
