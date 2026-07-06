@@ -1,0 +1,10 @@
+@use "../common" as *;
+
+.catalog__title {
+  @include font($secondary-font, 36px, 36px, $basic-black);
+  font-weight: 400;
+}
+
+.catalog__list {
+  @include list-style;
+}

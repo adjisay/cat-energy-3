@@ -1,0 +1,15 @@
+@use "../common" as *;
+
+.additional-list {
+  @include list-style;
+}
+
+.additional-list__item {
+  line-height: 14px;
+}
+
+.additional-list__item-title {
+  @include font($secondary-font, 16px, 16px, $special-dark-grey);
+  font-weight: 400;
+  text-transform: uppercase;
+}

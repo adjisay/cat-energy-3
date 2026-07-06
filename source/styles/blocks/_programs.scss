@@ -1,0 +1,21 @@
+@use "../common" as *;
+
+.programs__list {
+  @include list-style;
+}
+
+.programs__title {
+  @include font($secondary-font, 24px, 37px, $basic-black);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.programs__item {
+  background-color: $basic-grey;
+}
+
+.programs__link {
+  @include font($secondary-font, 16px, 16px, $basic-black);
+  text-transform: uppercase;
+  text-decoration: none;
+}

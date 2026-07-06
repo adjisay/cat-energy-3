@@ -1,0 +1,7 @@
+@use "variables.scss" as *;
+
+.container {
+  width: $container-width-desktop;
+  margin: 0 auto;
+  padding: 0 $side-padding-desktop;
+}

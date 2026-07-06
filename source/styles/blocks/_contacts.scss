@@ -1,0 +1,16 @@
+@use "../common" as *;
+
+.contacts {
+  background-color: $basic-grey;
+}
+
+.contacts__title {
+  @include font($secondary-font, 16px, 20px, $basic-black);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.contacts__address {
+  line-height: 20px;
+  font-style: normal;
+}
