@@ -1,11 +1,8 @@
 @use "../common" as *;
 
-.contacts {
-}
-
 .contacts__title {
   @include font($secondary-font, 16px, 20px, $basic-black);
-  font-weight: normal;
+  font-weight: 400;
   text-transform: uppercase;
 }
 

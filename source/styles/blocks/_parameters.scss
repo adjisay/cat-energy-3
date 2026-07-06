@@ -1,8 +1,5 @@
 @use "../common" as *;
 
-.parameters {
-}
-
 .parameters__term {
   @include font($secondary-font, 24px, 24px, $basic-black);
   text-transform: uppercase;

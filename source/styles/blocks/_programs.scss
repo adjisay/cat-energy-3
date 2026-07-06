@@ -1,15 +1,12 @@
 @use "../common" as *;
 
-.programs {
-}
-
 .programs__list {
   @include list-style;
 }
 
 .programs__title {
   @include font($secondary-font, 24px, 37px, $basic-black);
-  font-weight: normal;
+  font-weight: 400;
   text-transform: uppercase;
 }
 

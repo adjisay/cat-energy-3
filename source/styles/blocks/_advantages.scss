@@ -1,10 +1,6 @@
 @use "../common" as *;
 
-.advantages {
-}
-
 .advantages__title {
   @include font($secondary-font, 36px, 40px, $basic-black);
-  font-weight: normal;
+  font-weight: 400;
 }
-
