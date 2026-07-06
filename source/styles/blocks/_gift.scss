@@ -1,0 +1,10 @@
+@use "../common" as *;
+
+.gift {
+  background-color: $basic-green;
+}
+
+.gift__description {
+  @include font($primary-font, 16px, 20px, $basic-white);
+  text-align: center;
+}

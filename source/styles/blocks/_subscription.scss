@@ -1,0 +1,16 @@
+@use "../common" as *;
+
+.subscription__title {
+  @include font($secondary-font, 24px, 24px, $basic-black);
+  font-weight: 400;
+}
+
+.subscription__description {
+  @include font($secondary-font, 16px, 24px, $basic-black);
+}
+
+.subscription__email {
+  @include font($secondary-font, 20px, 20px, $base-color-text);
+  border: 1px solid $special-light-grey6;
+  text-transform: uppercase;
+}

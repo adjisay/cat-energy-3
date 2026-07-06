@@ -1,0 +1,6 @@
+@use "../common" as *;
+
+.additional-catalog__title {
+  @include font($secondary-font, 24px, 24px, $basic-black);
+  font-weight: 400;
+}

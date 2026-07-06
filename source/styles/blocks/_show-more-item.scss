@@ -1,0 +1,16 @@
+@use "../common" as *;
+
+.show-more-item__title {
+  @include font($secondary-font, 16px, 20px, $special-black);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.show-more-item__description {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.show-more-item__button {
+  text-decoration: none;
+}

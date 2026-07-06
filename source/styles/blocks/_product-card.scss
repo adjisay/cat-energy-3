@@ -1,0 +1,16 @@
+@use "../common" as *;
+
+.product-card__title {
+  @include font($secondary-font, 16px, 20px, $special-dark-grey);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.product-card__specs {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.product-card__link {
+  text-decoration: none;
+}
