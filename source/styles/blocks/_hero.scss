@@ -1,9 +1,8 @@
 @use "../common" as *;
 
 .hero {
-  background-color: $basic-green;
-
   @include font($secondary-font, 14px, 14px, $basic-white);
+  background-color: $basic-green;
 }
 
 .hero__title {

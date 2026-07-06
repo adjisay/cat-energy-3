@@ -1,0 +1,7 @@
+@use "../common" as *;
+
+.program-form__text-required {
+  line-height: 16px;
+  text-align: center;
+  color: $basic-black;
+}
