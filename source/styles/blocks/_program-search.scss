@@ -1,0 +1,12 @@
+@use "../common" as *;
+
+.program-search__title {
+  @include font($secondary-font, 36px, 36px, $basic-black);
+  font-weight: 400;
+}
+
+.program-search__description {
+  font-family: $secondary-font;
+  text-transform: uppercase;
+  color: $basic-black;
+}

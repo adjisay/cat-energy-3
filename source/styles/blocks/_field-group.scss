@@ -1,0 +1,27 @@
+@use "../common" as *;
+
+.field-group {
+  border: none;
+}
+
+.field-group__list {
+  @include list-style;
+}
+
+.field-group__lead {
+  font-family: $secondary-font;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.field-group__input {
+  border: 1px solid $special-light-grey4;
+  font-family: $secondary-font;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.field-group__title {
+  @include font($secondary-font, 24px, 26px, $basic-black);
+  padding-inline: 0;
+}
