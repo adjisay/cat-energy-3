@@ -1,0 +1,6 @@
+@use "../common" as *;
+
+.copyright {
+  @include font($primary-font, 16px, 20px, $base-color-text);
+  text-decoration: none;
+}

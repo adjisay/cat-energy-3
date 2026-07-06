@@ -1,0 +1,15 @@
+@use "../common" as *;
+
+.example {
+  background-color: $special-light-grey;
+}
+
+.example__title {
+  @include font($secondary-font, 36px, 40px, $basic-black);
+  font-weight: normal;
+}
+
+.example__cost {
+  @include font($secondary-font, 14px, 20px, $basic-black);
+  text-transform: uppercase;
+}

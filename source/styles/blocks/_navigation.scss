@@ -1,0 +1,15 @@
+@use "../common" as *;
+
+.navigation {
+  @include font($secondary-font, 20px, 20px, $base-color-text);
+  text-transform: uppercase;
+}
+
+.navigation__list {
+  @include list-style;
+}
+
+.navigation__link {
+  color: $basic-black;
+  text-decoration: none;
+}
