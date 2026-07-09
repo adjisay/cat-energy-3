@@ -1,7 +1,10 @@
 @use "../common" as *;
 
 .gift {
+  width: 280px;
+  height: 290px;
   background-color: $basic-green;
+  background-image: url("../../icons/stack.svg#icon-gift");
 }
 
 .gift__description {
