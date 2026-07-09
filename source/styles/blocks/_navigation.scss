@@ -5,6 +5,15 @@
   text-transform: uppercase;
 }
 
+.navigation__button {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../icons/stack.svg#icon-button-burger");
+  background-color: $basic-white;
+  border: none;
+  cursor: pointer;
+}
+
 .navigation__list {
   @include list-style;
 }

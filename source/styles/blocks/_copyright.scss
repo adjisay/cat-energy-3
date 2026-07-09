@@ -3,4 +3,12 @@
 .copyright {
   @include font($primary-font, 16px, 20px, $base-color-text);
   text-decoration: none;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 27px;
+    height: 34px;
+    background-image: url("../../icons/stack.svg#html-academy-logo");
+  }
 }
