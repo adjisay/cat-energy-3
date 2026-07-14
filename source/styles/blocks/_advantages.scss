@@ -1,6 +1,109 @@
 @use "../common" as *;
 
+.advantages {
+  padding-bottom: 49px;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 47px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 69px;
+  }
+}
+
 .advantages__title {
   @include font($secondary-font, 36px, 40px, $basic-black);
+  margin-block: 0 40px;
   font-weight: 400;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 32px;
+
+    @include font-resize(60px, 60px);
+  }
+}
+
+.advantages__list {
+  @include list-style;
+  counter-reset: advantages;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    gap: 37px 153px;
+  }
+
+  @media (min-width: $desktop-width) {
+    column-gap: 105px;
+  }
+}
+
+.advantages__item {
+  counter-increment: advantages;
+  position: relative;
+  min-height: 60px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: $basic-green;
+    background-repeat: no-repeat;
+    background-size: 26px 29px;
+    background-position: center;
+
+    @media (min-width: $tablet-width) {
+      top: 40px;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &::after {
+    @media (min-width: $tablet-width) {
+      @include font($secondary-font, 280px, 280px, $basic-grey);
+      content: counter(advantages);
+      position: absolute;
+      top: 0;
+      left: 113px;
+      z-index: -1;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    min-height: 280px;
+  }
+
+  &--leaf::before {
+    background-image: url("../../icons/stack.svg#icon-leaf");
+  }
+
+  &--powder::before {
+    background-image: url("../../icons/stack.svg#icon-powder");
+  }
+
+  &--cutlery::before {
+    background-image: url("../../icons/stack.svg#icon-cutlery");
+  }
+
+  &--clock::before {
+    background-image: url("../../icons/stack.svg#icon-clock");
+  }
+}
+
+.advantages__description {
+  margin-block: 0;
+  margin-left: 80px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 151px;
+    margin-left: 0;
+    width: 220px;
+
+    @include font-resize(16px, 24px);
+  }
 }

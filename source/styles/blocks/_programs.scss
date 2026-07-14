@@ -1,57 +1,205 @@
 @use "../common" as *;
 
-.programs__list {
-  @include list-style;
+.programs {
+  padding-block: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding-block: 0 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-block: 82px 71px;
+  }
 }
 
-.programs__title {
-  @include font($secondary-font, 24px, 37px, $basic-black);
-  font-weight: 400;
-  text-transform: uppercase;
-  text-align: center;
+.programs__list {
+  @include list-style;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    column-gap: 80px;
+  }
 }
 
 .programs__item {
+  flex-grow: 1;
   position: relative;
+  min-height: 266px;
+  padding: 30px 20px 18px;
   background-color: $basic-grey;
 
   &::before,
   &::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-  }
-
-  &--slim::before {
-    z-index: 1;
-    background-image: url("../../icons/stack.svg#cat-slim");
-  }
-
-  &--muscle::before {
-    z-index: 1;
-    background-image: url("../../icons/stack.svg#cat-muscle");
   }
 
   &::after {
+    top: 24px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
     background-color: $basic-green;
     border-radius: 50%;
+
+    @media (min-width: $tablet-width) {
+      top: 92px;
+      left: auto;
+      right: 63px;
+      width: 200px;
+      height: 200px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: 47px;
+      left: 52px;
+      right: auto;
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 77px 52px 53px;
+    min-height: 372px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 77px 52px 55px;
+  }
+
+  &--slim::before {
+    top: 21px;
+    left: 27px;
+    z-index: 1;
+    width: 36px;
+    height: 50px;
+    background-image: url("../../icons/stack.svg#cat-slim");
+    background-size: 36px 50px;
+    background-repeat: no-repeat;
+
+    @media (min-width: $tablet-width) {
+      top: 81px;
+      left: auto;
+      right: 92px;
+      width: 140px;
+      height: 194px;
+      background-size: 140px 194px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: 41px;
+      left: 67px;
+      right: auto;
+      width: 70px;
+      height: 97px;
+      background-size: 70px 97px;
+    }
+  }
+
+  &--muscle::before {
+    top: 35px;
+    left: 12px;
+    z-index: 1;
+    width: 68px;
+    height: 28px;
+    background-image: url("../../icons/stack.svg#cat-muscle");
+    background-size: 68px 28px;
+    background-repeat: no-repeat;
+
+    @media (min-width: $tablet-width) {
+      top: 135px;
+      left: auto;
+      right: 28px;
+      width: 268px;
+      height: 112px;
+      background-size: 268px 112px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: 67px;
+      left: 33px;
+      right: auto;
+      width: 134px;
+      height: 56px;
+      background-size: 134px 56px;
+    }
+  }
+}
+
+.programs__title {
+  @include font($secondary-font, 24px, 37px, $basic-black);
+  margin-block: 0 29px;
+  margin-left: 70px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 24px;
+    margin-left: 0;
+
+    @include font-resize(36px, 36px);
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 73px;
+    margin-left: 162px;
+  }
+}
+
+.programs__description {
+  margin-block: 0 15px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid $special-light-grey6;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 28px;
+    padding-bottom: 0;
+    width: 340px;
+    border-bottom: none;
+    color: $basic-black;
+
+    @include font-resize(16px, 24px);
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 23px;
+    width: 457px;
   }
 }
 
 .programs__link {
   @include font($secondary-font, 16px, 16px, $basic-black);
+  display: block;
   position: relative;
+  width: 133px;
   text-transform: uppercase;
   text-decoration: none;
 
   &::after {
     content: "";
     position: absolute;
+    top: 3px;
+    right: 8px;
     width: 24px;
     height: 12px;
     background-image: url("../../icons/stack.svg#icon-arrow");
+
+    @media (min-width: $tablet-width) {
+      top: 10px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 161px;
+
+    @include font-resize(20px, 30px);
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 168px;
   }
 }

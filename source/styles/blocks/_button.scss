@@ -2,6 +2,8 @@
 
 .button {
   @include font($secondary-font, 16px, 20px, $basic-white);
+  display: block;
+  padding: 10px;
   background-color: $basic-green;
   border: none;
   text-align: center;
@@ -10,5 +12,9 @@
   &--alternate {
     background-color: $basic-grey;
     color: $base-color-text;
+  }
+
+  &--padding-high {
+    padding: 14px;
   }
 }

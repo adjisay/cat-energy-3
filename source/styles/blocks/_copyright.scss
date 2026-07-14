@@ -1,14 +1,15 @@
 @use "../common" as *;
 
 .copyright {
-  @include font($primary-font, 16px, 20px, $base-color-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   text-decoration: none;
 
-  &::after {
-    content: "";
-    display: block;
-    width: 27px;
-    height: 34px;
-    background-image: url("../../icons/stack.svg#html-academy-logo");
+  @include font($primary-font, 16px, 20px, $base-color-text);
+
+  @media (min-width: $tablet-width) {
+    width: 168px;
   }
 }
