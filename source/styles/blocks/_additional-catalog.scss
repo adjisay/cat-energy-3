@@ -1,6 +1,44 @@
 @use "../common" as *;
 
+.additional-catalog__container {
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: auto 245px;
+    grid-template-areas:
+      "title title"
+      "list  gift";
+    column-gap: 80px;
+  }
+}
+
 .additional-catalog__title {
-  @include font($secondary-font, 24px, 24px, $basic-black);
+  grid-area: title;
+  position: relative;
+  margin-block: 0 36px;
   font-weight: 400;
+
+  @include font($secondary-font, 24px, 24px, $basic-black);
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 80px;
+
+    @include font-resize(32px, 32px);
+  }
+}
+
+.additional-catalog .additional-catalog__list {
+  grid-area: list;
+  margin-bottom: 54px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 70px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
+}
+
+.additional-catalog__gift {
+  grid-area: gift;
 }

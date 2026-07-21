@@ -20,3 +20,8 @@
   line-height: $line-height;
   color: $color;
 }
+
+@mixin font-resize($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
