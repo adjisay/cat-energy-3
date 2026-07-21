@@ -6,13 +6,22 @@
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
+  color: $basic-black;
 
   @media (min-width: $tablet-width) {
     @include font-resize(18px, 24px);
   }
 
   @media (min-width: $desktop-width) {
+    color: $basic-white;
+
     @include font-resize(20px, 20px);
+  }
+
+  &--text-black {
+    @media (min-width: $desktop-width) {
+      color: $special-black;
+    }
   }
 }
 
@@ -45,9 +54,5 @@
 
 .navigation__link {
   text-decoration: none;
-  color: $basic-black;
-
-  @media (min-width: $desktop-width) {
-    color: $basic-white;
-  }
+  color: inherit;
 }

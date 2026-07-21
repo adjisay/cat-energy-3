@@ -2,6 +2,14 @@
 
 .contacts {
   position: relative;
+
+  @media (min-width: $tablet-width) {
+    background-color: $basic-grey;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-color: $basic-white;
+  }
 }
 
 .contacts__wrapper {

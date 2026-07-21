@@ -1,16 +1,80 @@
 @use "../common" as *;
 
+.subscription__container {
+  padding-block: 40px;
+
+  @media (min-width: $tablet-width) {
+    padding: 80px calc($side-padding-tablet + 40px);
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 96px $side-padding-desktop 104px;
+  }
+}
+
 .subscription__title {
-  @include font($secondary-font, 24px, 24px, $basic-black);
+  margin-block: 0 32px;
   font-weight: 400;
+
+  @include font($secondary-font, 24px, 24px, $basic-black);
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 66px;
+
+    @include font-resize(32px, 32px);
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 72px;
+
+    @include font-resize(40px, 40px);
+  }
 }
 
 .subscription__description {
+  margin-block: 0 24px;
+  text-align: center;
+
   @include font($secondary-font, 16px, 24px, $basic-black);
+
+  @media (min-width: $tablet-width) {
+    @include font-resize(24px, 32px);
+  }
+}
+
+.subscription__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+  }
+
+  @media (min-width: $tablet-width) {
+    justify-content: center;
+  }
 }
 
 .subscription__email {
-  @include font($secondary-font, 20px, 20px, $base-color-text);
+  padding: 13px;
   border: 1px solid $special-light-grey6;
   text-transform: uppercase;
+
+  @include font($secondary-font, 20px, 20px, $base-color-text);
+
+  @media (min-width: $tablet-width) {
+    flex-grow: 1;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-grow: 0;
+    width: 496px;
+  }
+}
+
+.subscription__button {
+  @media (min-width: $tablet-width) {
+    flex-basis: 256px;
+  }
 }

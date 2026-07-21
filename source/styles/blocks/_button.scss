@@ -1,13 +1,14 @@
 @use "../common" as *;
 
 .button {
-  @include font($secondary-font, 16px, 20px, $basic-white);
   display: block;
   padding: 10px;
   background-color: $basic-green;
   border: none;
   text-align: center;
   text-transform: uppercase;
+
+  @include font($secondary-font, 16px, 20px, $basic-white);
 
   &--alternate {
     background-color: $basic-grey;
