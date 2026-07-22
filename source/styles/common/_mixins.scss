@@ -46,12 +46,13 @@
   }
 }
 
+/* stylelint-disable-next-line length-zero-no-unit */
 @mixin title-line-after($gap-tablet: 0px, $gap-desktop: 70px, $color: $basic-green) {
   &::after {
     @media (min-width: $tablet-width) {
       @include absolute-h-line($color);
-      
-      right: calc(100% + #{$gap-tablet});
+
+      right: calc(100% + #{$gap-tablet}); /* Нулевое значение по умолчанию необходимо для кооректного отображения декор. элемента */
     }
 
     @media (min-width: $desktop-width) {

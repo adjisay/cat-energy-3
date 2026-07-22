@@ -22,7 +22,7 @@
   grid-area: title;
   position: relative;
   margin-block: 0 36px;
-  padding-inline: 40px;
+  padding-right: 40px;
   width: fit-content;
   background-color: $basic-white;
   font-weight: 400;
@@ -31,13 +31,14 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 80px;
+    padding-left: 40px;
 
     @include font-resize(32px, 32px);
   }
 
   @media (min-width: $desktop-width) {
     padding-left: 0;
-    
+
     @include font-resize(40px, 40px);
   }
 }
