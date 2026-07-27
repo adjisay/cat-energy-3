@@ -1,12 +1,12 @@
 @use "../common" as *;
 
 .navigation {
-  @include font($secondary-font, 20px, 20px, $base-color-text);
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
-  color: $basic-black;
+
+  @include font($secondary-font, 20px, 20px, $basic-black);
 
   @media (min-width: $tablet-width) {
     @include font-resize(18px, 24px);
@@ -26,22 +26,45 @@
 }
 
 .navigation__button {
-  display: none;
+  display: block;
   width: 24px;
   height: 24px;
-  background-image: url("../../icons/stack.svg#icon-button-burger");
   background-color: $basic-white;
   border: none;
   cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.navigation--closed .navigation__button {
+  background-image: url("../../icons/stack.svg#icon-button-burger");
+}
+
+.navigation--opened .navigation__button {
+  background-image: url("../../icons/stack.svg#icon-button-close");
+}
+
+.navigation--closed .navigation__list {
+  display: none;
 }
 
 .navigation__list {
   @include list-style;
+
+  position: absolute;
+  z-index: 100;
+  top: 65px;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
 
   @media (min-width: $tablet-width) {
+    position: static;
     flex-flow: row wrap;
+    align-items: center;
     gap: 10px 33px;
     width: 436px;
   }
@@ -52,7 +75,33 @@
   }
 }
 
+.navigation__item {
+  border-bottom: 1px solid $special-light-grey7;
+
+  &:first-of-type {
+    border-top: 1px solid $special-light-grey7;
+
+    @media (min-width: $tablet-width) {
+      border: none;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    border: none;
+  }
+}
+
 .navigation__link {
+  display: block;
+  padding: 23px;
+  background-color: $basic-white;
+  text-align: center;
   text-decoration: none;
   color: inherit;
+  word-wrap: break-word;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    background-color: transparent;
+  }
 }

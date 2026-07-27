@@ -1,27 +1,244 @@
 @use "../common" as *;
 
 .field-group {
+  position: relative;
+  margin: 0;
+  padding: 0;
   border: none;
+
+  &--personal::before,
+  &--target::before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 100vw;
+    height: 1px;
+    background-color: $special-light-grey6;
+    transform: translateX(-50%);
+
+    @media (min-width: $tablet-width) {
+      content: none;
+    }
+  }
 }
 
 .field-group__list {
   @include list-style;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+
+  &--gap-m {
+    @media (min-width: $tablet-width) {
+      row-gap: 20px;
+    }
+  }
+
+  &--bordered {
+    @media (min-width: $tablet-width) {
+      padding: 23px 27px 27px;
+      border: 1px solid $special-light-grey4;
+    }
+
+    @media (min-width: $desktop-width) {
+      padding: 25px 28px;
+    }
+  }
+
+  &--additional {
+    @media (min-width: $tablet-width) {
+      flex-flow: row wrap;
+      gap: 32px 60px;
+      /* stylelint-disable-next-line max-nesting-depth */
+      .field-group__item {
+        flex: 0 0 calc((100% - 60px) / 2);
+        word-break: break-all;
+      }
+    }
+
+    @media (min-width: $desktop-width) {
+      column-gap: 80px;
+      /* stylelint-disable-next-line max-nesting-depth */
+      .field-group__item {
+        flex-basis: 245px;
+      }
+    }
+  }
+}
+
+.field-group__field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 13px;
+
+  &--radio,
+  &--checkbox {
+    column-gap: 15px;
+    width: fit-content;
+
+    .field-group__input {
+      position: relative;
+      appearance: none;
+      flex-shrink: 0;
+      margin: 0;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      border: 1px solid $special-light-grey3;
+
+      &:checked::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      /* stylelint-disable-next-line max-nesting-depth */
+      @media (min-width: $tablet-width) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (min-width: $tablet-width) {
+      column-gap: 20px;
+    }
+  }
+
+  &--radio {
+    .field-group__input {
+      border-radius: 50%;
+
+      &:checked::before {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: $basic-green;
+        /* stylelint-disable-next-line max-nesting-depth */
+        @media (min-width: $tablet-width) {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+
+  &--checkbox {
+    .field-group__input {
+      &:checked::before {
+        width: 24px;
+        height: 19px;
+        background-image: url("../../icons/stack.svg#icon-arrow-check");
+      }
+    }
+  }
+
+  &--email::before {
+    content: "";
+    position: absolute;
+    right: 13px;
+    width: 17px;
+    height: 13px;
+    background-image: url("../../icons/stack.svg#icon-mail");
+  }
+
+  &--phone::before {
+    content: "";
+    position: absolute;
+    right: 13px;
+    width: 15px;
+    height: 15px;
+    background-image: url("../../icons/stack.svg#icon-phone");
+  }
 }
 
 .field-group__lead {
   font-family: $secondary-font;
   font-size: 16px;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    @include font-resize(20px, 20px);
+  }
 }
 
 .field-group__input {
+  flex-grow: 1;
+  padding: 14px 15px;
   border: 1px solid $special-light-grey4;
   font-family: $secondary-font;
   font-size: 16px;
   text-transform: uppercase;
+
+  &--email,
+  &--phone {
+    padding-right: 40px;
+
+    @media (min-width: $tablet-width) {
+      padding-right: 50px;
+    }
+  }
+
+  &--comments {
+    padding-inline: 14px;
+    width: 100%;
+    min-height: 150px;
+    resize: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 11px 20px;
+
+    @include font-resize(20px, 20px);
+  }
 }
 
 .field-group__title {
+  @include title-line-before;
+
+  position: relative;
+  margin-bottom: 35px;
+  padding-inline: 0 20px;
+  width: fit-content;
+  background-color: $basic-white;
+
   @include font($secondary-font, 24px, 26px, $basic-black);
-  padding-inline: 0;
+  @include title-line-after(40px);
+
+  &--contacts {
+    @media (min-width: $tablet-width) {
+      margin-bottom: 76px;
+    }
+  }
+
+  &--comments {
+    margin-bottom: 38px;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 87px;
+    }
+
+    @media (min-width: $desktop-width) {
+      margin-bottom: 72px;
+    }
+  }
+
+  &--additional {
+    @media (min-width: $tablet-width) {
+      margin-bottom: 57px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-inline: 0 40px;
+
+    @include font-resize(36px, 36px);
+
+    br {
+      display: none;
+    }
+  }
 }

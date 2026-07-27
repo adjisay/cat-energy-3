@@ -1,6 +1,6 @@
 @use "../common" as *;
 
-.main-footer {
+.page-footer {
   padding-block: 40px;
   background-color: $basic-grey;
 
@@ -9,7 +9,7 @@
   }
 }
 
-.main-footer__container {
+.page-footer__container {
   position: relative;
   display: flex;
   flex-direction: column;

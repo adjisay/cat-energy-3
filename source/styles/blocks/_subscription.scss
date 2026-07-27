@@ -1,5 +1,9 @@
 @use "../common" as *;
 
+.subscription {
+  overflow-x: hidden;
+}
+
 .subscription__container {
   padding-block: 40px;
 
@@ -13,10 +17,17 @@
 }
 
 .subscription__title {
+  @include title-line-before;
+
+  position: relative;
   margin-block: 0 32px;
+  padding-right: 40px;
+  width: fit-content;
+  background-color: $basic-white;
   font-weight: 400;
 
   @include font($secondary-font, 24px, 24px, $basic-black);
+  @include title-line-after(40px);
 
   @media (min-width: $tablet-width) {
     margin-bottom: 66px;
