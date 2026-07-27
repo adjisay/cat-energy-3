@@ -1,6 +1,7 @@
 @use "../common" as *;
 
 .page-header {
+  position: relative;
   min-height: 65px;
   padding-block: 13px 14px;
 

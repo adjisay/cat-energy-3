@@ -25,16 +25,16 @@
   }
 
   @media (min-width: $tablet-width) {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "image"
-      "wrapper"
-      "button";
+    grid-template:
+      "image" auto
+      "wrapper" 1fr
+      "button" auto
+      / 1fr;
     row-gap: 22px;
     padding: 10px 37px 40px;
     width: 324px;
     min-height: 511px;
-    background-image: linear-gradient(to bottom, $basic-white calc(100% - 430px), $basic-grey calc(100% - 430px), $basic-grey 100%);
+    background-image: linear-gradient(to bottom, $basic-white 81px, $basic-grey 81px, $basic-grey 100%);
   }
 
   @media (min-width: $desktop-width) {
@@ -69,11 +69,6 @@
 
   @media (min-width: $tablet-width) {
     row-gap: 20px;
-    margin-bottom: 15px;
-  }
-
-  @media (min-width: $desktop-width) {
-    margin-bottom: 25px;
   }
 }
 

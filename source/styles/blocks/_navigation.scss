@@ -1,7 +1,6 @@
 @use "../common" as *;
 
 .navigation {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,10 +46,14 @@
   background-image: url("../../icons/stack.svg#icon-button-close");
 }
 
+.navigation--closed .navigation__list {
+  display: none;
+}
+
 .navigation__list {
   @include list-style;
 
-  position: fixed;
+  position: absolute;
   z-index: 100;
   top: 65px;
   left: 0;

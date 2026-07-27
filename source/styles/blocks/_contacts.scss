@@ -2,9 +2,10 @@
 
 .contacts {
   position: relative;
+  background-color: $basic-grey;
 
-  @media (min-width: $tablet-width) {
-    background-color: $basic-grey;
+  &--mobile-bg-color {
+    background-color: $basic-white;
   }
 
   @media (min-width: $desktop-width) {

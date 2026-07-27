@@ -60,3 +60,15 @@
     }
   }
 }
+
+@mixin margin-bottom-resize($mobile, $tablet, $desktop) {
+  margin-bottom: $mobile;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: $tablet;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: $desktop;
+  }
+}
