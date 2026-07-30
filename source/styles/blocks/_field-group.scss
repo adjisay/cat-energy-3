@@ -78,6 +78,7 @@
   &--checkbox {
     column-gap: 15px;
     width: fit-content;
+    cursor: pointer;
 
     .field-group__input {
       position: relative;

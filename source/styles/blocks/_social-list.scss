@@ -12,16 +12,27 @@
   display: block;
   width: 28px;
   height: 22px;
+  background-color: $special-grey;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    background-color: $basic-green;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   &--vk {
-    background-image: url("../../icons/stack.svg#icon-vk");
+    mask-image: url("../../icons/stack.svg#icon-vk");
   }
 
   &--youtube {
-    background-image: url("../../icons/stack.svg#icon-youtube");
+    mask-image: url("../../icons/stack.svg#icon-youtube");
   }
 
   &--telegram {
-    background-image: url("../../icons/stack.svg#icon-telegram");
+    mask-image: url("../../icons/stack.svg#icon-telegram");
   }
 }

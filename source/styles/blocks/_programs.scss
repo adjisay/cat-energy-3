@@ -193,6 +193,11 @@
     }
   }
 
+  &:active,
+  &:active::after {
+    opacity: 0.3;
+  }
+
   @media (min-width: $tablet-width) {
     width: 161px;
 
