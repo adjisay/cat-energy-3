@@ -33,6 +33,10 @@
   border: none;
   cursor: pointer;
 
+  .no-js & {
+    background-image: url("../../icons/stack.svg#icon-button-close");
+  }
+
   @media (min-width: $tablet-width) {
     display: none;
   }
@@ -42,12 +46,17 @@
   background-image: url("../../icons/stack.svg#icon-button-burger");
 }
 
-.navigation--opened .navigation__button {
+.navigation--opened .navigation__button,
+.no-js .navigation__button {
   background-image: url("../../icons/stack.svg#icon-button-close");
 }
 
 .navigation--closed .navigation__list {
   display: none;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+  }
 }
 
 .navigation__list {
@@ -60,6 +69,10 @@
   right: 0;
   display: flex;
   flex-direction: column;
+
+  .no-js & {
+    display: flex;
+  }
 
   @media (min-width: $tablet-width) {
     position: static;

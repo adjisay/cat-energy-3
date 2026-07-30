@@ -4,7 +4,9 @@
   position: relative;
   padding: 187px 58px 43px;
   min-height: 290px;
-  background-color: $basic-green;
+  background-image:
+    linear-gradient(rgba($basic-green, 0.85)),
+    image-set(url("../../images/mobile/1x/gift-background-mobile@1x.png") 1x, url("../../images/mobile/2x/gift-background-mobile@2x.png") 2x);
 
   &::before {
     content: "";
@@ -32,11 +34,17 @@
   @media (min-width: $tablet-width) {
     padding: 71px 125px 69px 421px;
     min-height: 200px;
+    background-image:
+      linear-gradient(rgba($basic-green, 0.85)),
+      image-set(url("../../images/tablet/1x/gift-background-tablet@1x.png") 1x, url("../../images/tablet/2x/gift-background-tablet@2x.png") 2x);
   }
 
   @media (min-width: $desktop-width) {
     padding: 185px 42px 43px;
     min-height: 288px;
+    background-image:
+      linear-gradient(rgba($basic-green, 0.85)),
+      image-set(url("../../images/desktop/1x/gift-background-desktop@1x.png") 1x, url("../../images/desktop/2x/gift-background-desktop@2x.png") 2x);
   }
 }
 
