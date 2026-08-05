@@ -4,15 +4,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  padding-block: 13px 14px;
   text-transform: uppercase;
 
   @include font($secondary-font, 20px, 20px, $basic-black);
 
+  .no-js & {
+    row-gap: 15px;
+    padding-bottom: 0;
+  }
+
   @media (min-width: $tablet-width) {
+    padding-block: 25px 0;
+
     @include font-resize(18px, 24px);
   }
 
   @media (min-width: $desktop-width) {
+    padding-block: 55px 0;
     color: $basic-white;
 
     @include font-resize(20px, 20px);
@@ -21,6 +31,18 @@
   &--text-black {
     @media (min-width: $desktop-width) {
       color: $special-black;
+    }
+  }
+}
+
+.navigation__logo {
+  .no-js & {
+    width: 100%;
+    flex-grow: 1;
+
+    @media (min-width: $tablet-width) {
+      flex-grow: 0;
+      width: fit-content;
     }
   }
 }
@@ -34,7 +56,7 @@
   cursor: pointer;
 
   .no-js & {
-    background-image: url("../../icons/stack.svg#icon-button-close");
+    display: none;
   }
 
   @media (min-width: $tablet-width) {
@@ -71,7 +93,13 @@
   flex-direction: column;
 
   .no-js & {
+    position: static;
     display: flex;
+    width: 100%;
+
+    @media (min-width: $tablet-width) {
+      width: fit-content;
+    }
   }
 
   @media (min-width: $tablet-width) {
@@ -89,22 +117,27 @@
 }
 
 .navigation__item {
-  border-bottom: 1px solid $special-light-grey7;
-
-  &:first-of-type {
-    border-top: 1px solid $special-light-grey7;
+  &::before,
+  &:last-of-type::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $special-light-grey7;
 
     @media (min-width: $tablet-width) {
-      border: none;
+      content: none;
     }
   }
 
-  @media (min-width: $tablet-width) {
-    border: none;
+  &:last-of-type::after {
+    bottom: 0;
   }
 }
 
 .navigation__link {
+  position: relative;
   display: block;
   padding: 23px;
   background-color: $basic-white;
@@ -113,8 +146,47 @@
   color: inherit;
   word-wrap: break-word;
 
-  @media (min-width: $tablet-width) {
-    padding: 0;
+  .no-js & {
     background-color: transparent;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: rgba($basic-black, 0.6);
+  }
+
+  &:active {
+    color: rgba($basic-black, 0.3);
+  }
+
+  @media (min-width: $tablet-width) {
+    background-color: transparent;
+    padding: 0;
+
+    &--current::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      width: 100%;
+      height: 2px;
+      background-color: $basic-green;
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &--index::before {
+      background-color: $basic-white;
+    }
+
+    &--index:hover,
+    &--index:focus-visible {
+      color: rgba($basic-white, 0.6);
+    }
+
+    &--index:active {
+      color: rgba($basic-white, 0.3);
+    }
   }
 }

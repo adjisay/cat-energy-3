@@ -72,6 +72,20 @@
   border: 1px solid $special-light-grey6;
   text-transform: uppercase;
 
+  &:hover {
+    border-color: $special-light-grey3;
+  }
+
+  &:focus-visible {
+    border-color: $base-color-text;
+    outline: 1px solid $base-color-text;
+  }
+
+  &:user-invalid {
+    border-color: $basic-red;
+    outline: 1px solid $basic-red;
+  }
+
   @include font($secondary-font, 20px, 20px, $base-color-text);
 
   @media (min-width: $tablet-width) {

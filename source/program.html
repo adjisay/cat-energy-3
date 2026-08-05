@@ -9,6 +9,9 @@
     <link rel="apple-touch-icon" href="favicons/favicon-180.png">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preload" href="fonts/lato/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/oswald/oswaldregular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <script src="scripts/index.js" defer></script>
   </head>
   <body>
     <header class="page-header page-header--static">
@@ -159,9 +162,12 @@
         </div>
         <div class="contacts__map-wrapper ">
           <picture>
+            <source media="(min-width: 1440px)" srcset="images/desktop/1x/map-desktop@1x.webp 1x, images/desktop/2x/map-desktop@2x.webp 2x" width="1440" height="400" type="image/webp">
+            <source media="(min-width: 768px)" srcset="images/tablet/1x/map-tablet@1x.webp 1px, images/tablet/2x/map-tablet@2x.webp 2x" width="768" height="400" type="image/webp">
+            <source srcset="images/mobile/1x/map-mobile@1x.webp 1x, images/mobile/2x/map-mobile@2x.webp 2x" width="320" height="362" type="image/webp">
             <source media="(min-width: 1440px)" srcset="images/desktop/1x/map-desktop@1x.png 1x, images/desktop/2x/map-desktop@2x.png 2x" width="1440" height="400" type="image/png">
             <source media="(min-width: 768px)" srcset="images/tablet/1x/map-tablet@1x.png 1x, images/tablet/2x/map-tablet@2x.png 2x" width="768" height="400" type="image/png">
-            <img class="contacts__map-image" src="images/mobile/1x/map-mobile@1x.png" srcset="images/mobile/2x/map-mobile@2x.png 2x" width="320" height="362" alt="Карта с точным местоположением компании.">
+            <img class="contacts__map-image" src="images/mobile/1x/map-mobile@1x.png" srcset="images/mobile/2x/map-mobile@2x.png 2x" width="320" height="362" loading="lazy" alt="Карта с точным местоположением компании.">
           </picture>
           <iframe
             class="contacts__map-interactive"
@@ -204,6 +210,5 @@
         </a>
       </div>
     </footer>
-    <script src="scripts/index.js" defer></script>
   </body>
 </html>

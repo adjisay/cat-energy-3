@@ -131,11 +131,12 @@
 }
 
 .programs__title {
-  @include font($secondary-font, 24px, 37px, $basic-black);
   margin-block: 0 29px;
   margin-left: 70px;
   font-weight: 400;
   text-transform: uppercase;
+
+  @include font($secondary-font, 24px, 37px, $basic-black);
 
   @media (min-width: $tablet-width) {
     margin-bottom: 24px;
@@ -172,12 +173,13 @@
 }
 
 .programs__link {
-  @include font($secondary-font, 16px, 16px, $basic-black);
   display: block;
   position: relative;
   width: 133px;
   text-transform: uppercase;
   text-decoration: none;
+
+  @include font($secondary-font, 16px, 16px, $basic-black);
 
   &::after {
     content: "";
@@ -187,10 +189,18 @@
     width: 24px;
     height: 12px;
     background-image: url("../../icons/stack.svg#icon-arrow");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform-origin: left center;
+    transition: transform 0.2s ease;
 
     @media (min-width: $tablet-width) {
       top: 10px;
     }
+  }
+
+  &:hover::after {
+    transform: scaleX(1.333);
   }
 
   &:active,

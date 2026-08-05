@@ -11,6 +11,10 @@
   &:focus-visible,
   &:active {
     color: $basic-green;
+
+    .copyright__logo-image {
+      color: $basic-green;
+    }
   }
 
   &:active {
@@ -22,4 +26,8 @@
   @media (min-width: $tablet-width) {
     width: 168px;
   }
+}
+
+.copyright__logo-image {
+  color: $special-grey;
 }

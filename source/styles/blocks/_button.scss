@@ -11,28 +11,38 @@
 
   @include font($secondary-font, 16px, 20px, $basic-white);
 
-  &:hover,
-  &:focus-visible,
-  &:active {
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled),
+  &:active:not(:disabled) {
     background-color: $special-green;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     color: rgba($basic-white, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
   }
 
   &--alternate {
     background-color: $basic-grey;
     color: $base-color-text;
 
-    &:hover,
-    &:focus-visible,
-    &:active {
+    &:hover:not(:disabled),
+    &:focus-visible:not(:disabled),
+    &:active:not(:disabled) {
       background-color: $special-light-grey2;
     }
 
-    &:active {
-      color: $base-color-text;
+    &:active:not(:disabled) {
+      color: rgba($base-color-text, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
     }
   }
 

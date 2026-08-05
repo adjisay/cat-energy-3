@@ -56,8 +56,14 @@
   touch-action: none;
   cursor: grab;
 
+  &:hover,
+  &:focus-visible {
+    background-color: $basic-green;
+  }
+
   &:active {
     cursor: grabbing;
+    opacity: 0.6;
   }
 
   &::before {
@@ -70,7 +76,27 @@
     padding: 0;
     border-radius: 50%;
     border: 2px solid $special-grey;
-    background: $basic-white url("../../icons/stack.svg#icon-arrow-inner") no-repeat center / 24px 18px;
+    background: $basic-white;
     transform: translate(-50%, -50%);
+  }
+
+  &:hover::before,
+  &:focus-visible::before {
+    border-color: $basic-green;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 18px;
+    mask-image: url("../../icons/stack.svg#icon-arrow-inner");
+    background-color: $special-grey;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    background-color: $basic-green;
   }
 }

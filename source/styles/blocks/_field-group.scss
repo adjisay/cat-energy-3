@@ -144,6 +144,14 @@
     width: 17px;
     height: 13px;
     background-image: url("../../icons/stack.svg#icon-mail");
+
+    @media (min-width: $tablet-width) {
+      right: 15px;
+    }
+
+    @media (min-width: $desktop-width) {
+      right: 17px;
+    }
   }
 
   &--phone::before {
@@ -153,6 +161,14 @@
     width: 15px;
     height: 15px;
     background-image: url("../../icons/stack.svg#icon-phone");
+
+    @media (min-width: $tablet-width) {
+      right: 15px;
+    }
+
+    @media (min-width: $desktop-width) {
+      right: 17px;
+    }
   }
 }
 
@@ -173,6 +189,20 @@
   font-family: $secondary-font;
   font-size: 16px;
   text-transform: uppercase;
+
+  &:hover {
+    border-color: $special-light-grey3;
+  }
+
+  &:focus-visible {
+    border-color: $base-color-text;
+    outline: 1px solid $base-color-text;
+  }
+
+  &:user-invalid {
+    border-color: $basic-red;
+    outline: 1px solid $basic-red;
+  }
 
   &--email,
   &--phone {
