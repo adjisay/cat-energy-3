@@ -46,10 +46,6 @@
     }
   }
 
-  &--padding-high {
-    padding: 14px;
-  }
-
   &--font-mobile-m {
     @include font-resize(20px, 26px);
   }

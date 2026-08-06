@@ -5,7 +5,7 @@
   background-color: $special-light-grey;
 
   @media (min-width: $tablet-width) {
-    padding-block: 45px 0;
+    padding-block: 45px 100px;
     background-image: linear-gradient(to bottom, $basic-white 619px, $special-light-grey 619px, $special-light-grey 100%);
     border-top: 1px solid $special-light-grey7;
   }
@@ -54,10 +54,11 @@
 }
 
 .example__wrapper {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
 
   @media (min-width: $tablet-width) {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 104px;
@@ -95,7 +96,7 @@
   text-align: center;
 
   @media (min-width: $tablet-width) {
-    padding: 15px 10px 25px;
+    padding: 13px 10px 19px;
     width: 162px;
   }
 }
@@ -123,7 +124,7 @@
   @include font-resize(12px, 12px);
 
   @media (min-width: $tablet-width) {
-    top: 69px;
+    top: 61px;
     padding-inline: 8px;
     background-color: $basic-white;
     white-space: nowrap;
@@ -137,12 +138,13 @@
 }
 
 .example__cost {
+  align-self: center;
   text-transform: uppercase;
 
   @include font($secondary-font, 14px, 20px, $basic-black);
 
   @media (min-width: $tablet-width) {
-    padding-top: 11px;
+    margin-top: -1px;
     width: 174px;
     text-align: right;
 
@@ -152,7 +154,6 @@
   @media (min-width: $desktop-width) {
     display: flex;
     justify-content: space-between;
-    padding-top: 0;
     width: 327px;
   }
 }

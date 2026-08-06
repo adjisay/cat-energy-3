@@ -1,11 +1,11 @@
 @use "../common" as *;
 
 .page-footer {
-  padding-block: 40px;
+  padding-block: 39px 40px;
   background-color: $basic-grey;
 
   @media (min-width: $tablet-width) {
-    padding-block: 55px;
+    padding-block: 60px;
   }
 }
 
@@ -20,7 +20,7 @@
   &::after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 280px;
     height: 1px;
     background-color: $special-light-grey6;
 
