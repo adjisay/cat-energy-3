@@ -2,7 +2,6 @@ document.documentElement.classList.replace('no-js', 'js');
 
 /* MAP */
 const mapFrame = document.querySelector('.contacts__map-interactive');
-const mapImage = document.querySelector('.contacts__map-image');
 
 /* NAVIGATION */
 const navigation = document.querySelector('.navigation');
@@ -14,7 +13,6 @@ const sliders = document.querySelectorAll('.slider');
 /* MAP */
 mapFrame.addEventListener('load', () => {
   mapFrame.classList.add('contacts__map-interactive--loaded');
-  mapImage.style.display = 'none';
 });
 
 /* NAVIGATION */

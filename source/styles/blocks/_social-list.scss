@@ -5,13 +5,18 @@
 
   display: flex;
   justify-content: space-between;
+  margin-left: 37px;
   width: 132px;
 }
 
-.social-list__link {
-  display: block;
+.social-list__item {
   width: 28px;
   height: 22px;
+}
+
+.social-list__link {
+  margin-inline: auto;
+  display: block;
   background-color: $special-grey;
 
   &:hover,
@@ -25,14 +30,21 @@
   }
 
   &--vk {
+    width: 27px;
+    height: 17px;
     mask-image: url("../../icons/stack.svg#icon-vk");
   }
 
   &--youtube {
+    margin-top: -2px;
+    width: 24px;
+    height: 19px;
     mask-image: url("../../icons/stack.svg#icon-youtube");
   }
 
   &--telegram {
+    width: 20px;
+    height: 17px;
     mask-image: url("../../icons/stack.svg#icon-telegram");
   }
 }

@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: -4px;
   width: 100%;
   text-decoration: none;
 
@@ -11,6 +12,10 @@
   &:focus-visible,
   &:active {
     color: $basic-green;
+
+    .copyright__logo-image {
+      color: $basic-green;
+    }
   }
 
   &:active {
@@ -20,6 +25,10 @@
   @include font($primary-font, 16px, 20px, $base-color-text);
 
   @media (min-width: $tablet-width) {
-    width: 168px;
+    width: 162px;
   }
+}
+
+.copyright__logo-image {
+  color: $special-grey;
 }

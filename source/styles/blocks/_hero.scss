@@ -3,6 +3,7 @@
 $background-gray-color: #4c4b50;
 
 .hero {
+  position: relative;
   min-height: 480px;
   padding-top: 27px;
   background-image:
@@ -63,7 +64,7 @@ $background-gray-color: #4c4b50;
 
   @media (min-width: $tablet-width) {
     margin-left: 90px;
-    margin-bottom: 21px;
+    margin-bottom: 50px;
   }
 
   @media (min-width: $desktop-width) {
@@ -78,6 +79,7 @@ $background-gray-color: #4c4b50;
 
   @media (min-width: $tablet-width) {
     position: absolute;
+    bottom: -2px;
     z-index: -1;
     min-height: 609px;
   }
@@ -96,6 +98,10 @@ $background-gray-color: #4c4b50;
   @media (min-width: $tablet-width) {
     margin-left: 90px;
     width: 244px;
+
+    &.button {
+      padding: 14px;
+    }
   }
 
   @media (min-width: $desktop-width) {

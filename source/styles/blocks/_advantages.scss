@@ -33,11 +33,11 @@
 
   @media (min-width: $tablet-width) {
     flex-direction: row;
-    gap: 37px 153px;
+    gap: 37px 142px;
   }
 
   @media (min-width: $desktop-width) {
-    column-gap: 105px;
+    column-gap: 84px;
   }
 }
 
@@ -80,6 +80,7 @@
 
   &--leaf::before {
     background-image: url("../../icons/stack.svg#icon-leaf");
+    background-size: 30px 32px;
   }
 
   &--powder::before {
@@ -92,17 +93,18 @@
 
   &--clock::before {
     background-image: url("../../icons/stack.svg#icon-clock");
+    background-size: 28px 32px;
   }
 }
 
 .advantages__description {
-  margin-block: 0;
+  margin-block: 2px 0;
   margin-left: 80px;
 
   @media (min-width: $tablet-width) {
     margin-top: 151px;
     margin-left: 0;
-    width: 220px;
+    width: 242px;
 
     @include font-resize(16px, 24px);
   }

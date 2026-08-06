@@ -20,7 +20,7 @@
 
   @media (min-width: $tablet-width) {
     justify-content: space-between;
-    padding-block: 60px;
+    padding: 61px 40px;
   }
 
   @media (min-width: $desktop-width) {
@@ -73,6 +73,10 @@
   }
 }
 
+.contacts__map-wrapper {
+  position: relative;
+}
+
 .contacts__map-image,
 .contacts__map-interactive {
   width: 100%;
@@ -84,6 +88,8 @@
 }
 
 .contacts__map-interactive {
+  position: absolute;
+  top: 0;
   border: none;
   opacity: 0;
 
