@@ -17,7 +17,11 @@
 
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    row-gap: 30px;
+  }
 
   @media (min-width: $desktop-width) {
     flex-direction: row;
@@ -77,6 +81,10 @@
       /* stylelint-disable-next-line max-nesting-depth */
       @media (min-width: $tablet-width) {
         right: 4px;
+      }
+      /* stylelint-disable-next-line max-nesting-depth */
+      @media (min-width: $desktop-width) {
+        right: 10px;
       }
     }
   }
@@ -177,7 +185,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    margin-bottom: 23px;
+    margin-bottom: 27px;
     width: 457px;
   }
 }
@@ -206,6 +214,10 @@
 
     @media (min-width: $tablet-width) {
       top: 10px;
+    }
+
+    @media (min-width: $desktop-width) {
+      right: 15px;
     }
   }
 

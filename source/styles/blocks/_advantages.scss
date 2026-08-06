@@ -13,19 +13,25 @@
 }
 
 .advantages__title {
-  @include font($secondary-font, 36px, 40px, $basic-black);
   margin-block: 0 40px;
   font-weight: 400;
 
+  @include font($secondary-font, 36px, 40px, $basic-black);
+  
   @media (min-width: $tablet-width) {
     margin-bottom: 32px;
 
     @include font-resize(60px, 60px);
   }
+
+  @media (min-width: $tablet-width) {
+    line-height: 62px;
+  }
 }
 
 .advantages__list {
   @include list-style;
+
   counter-reset: advantages;
   display: flex;
   flex-flow: column wrap;
@@ -37,7 +43,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    column-gap: 84px;
+    column-gap: 83px;
   }
 }
 
@@ -65,12 +71,13 @@
 
   &::after {
     @media (min-width: $tablet-width) {
-      @include font($secondary-font, 280px, 280px, $basic-grey);
       content: counter(advantages);
       position: absolute;
       top: 0;
       left: 113px;
       z-index: -1;
+      
+      @include font($secondary-font, 280px, 280px, $basic-grey);
     }
   }
 

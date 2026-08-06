@@ -5,7 +5,11 @@
   background-color: $basic-grey;
 
   @media (min-width: $tablet-width) {
-    padding-block: 60px;
+    padding-block: 58px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-block: 67px;
   }
 }
 
