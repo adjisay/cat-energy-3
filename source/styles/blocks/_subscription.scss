@@ -12,7 +12,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding: 96px $side-padding-desktop 104px;
+    padding: 96px $side-padding-desktop 108px;
   }
 }
 
@@ -35,7 +35,7 @@
     @include font-resize(32px, 32px);
   }
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     margin-bottom: 72px;
 
     @include font-resize(40px, 40px);
@@ -68,7 +68,7 @@
 }
 
 .subscription__email {
-  padding: 13px;
+  padding: 12px;
   border: 1px solid $special-light-grey6;
   text-transform: uppercase;
 
@@ -99,6 +99,8 @@
 }
 
 .subscription__button {
+  padding-block: 15px;
+
   @media (min-width: $tablet-width) {
     flex-basis: 256px;
   }
