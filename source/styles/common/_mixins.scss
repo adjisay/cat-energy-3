@@ -31,11 +31,11 @@
 @mixin absolute-h-line($color: $basic-green, $width: 100vw, $height: 2px) {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 60%;
   width: $width;
   height: $height;
   background-color: $color;
-  transform: translateY(-50%);
+  transform: translateY(-60%);
 }
 
 @mixin title-line-before($color: $basic-green) {
