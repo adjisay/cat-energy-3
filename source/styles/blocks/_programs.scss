@@ -17,7 +17,11 @@
 
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    row-gap: 30px;
+  }
 
   @media (min-width: $desktop-width) {
     flex-direction: row;
@@ -77,6 +81,10 @@
       /* stylelint-disable-next-line max-nesting-depth */
       @media (min-width: $tablet-width) {
         right: 4px;
+      }
+      /* stylelint-disable-next-line max-nesting-depth */
+      @media (min-width: $desktop-width) {
+        right: 10px;
       }
     }
   }
@@ -145,6 +153,7 @@
   margin-left: 70px;
   font-weight: 400;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 
   @include font($secondary-font, 24px, 37px, $basic-black);
 
@@ -177,7 +186,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    margin-bottom: 23px;
+    margin-bottom: 27px;
     width: 457px;
   }
 }
@@ -195,7 +204,7 @@
     content: "";
     position: absolute;
     top: 1px;
-    right: 8px;
+    left: calc(100% - 32px);
     width: 24px;
     height: 12px;
     background-image: url("../../icons/stack.svg#icon-arrow");
@@ -206,6 +215,10 @@
 
     @media (min-width: $tablet-width) {
       top: 10px;
+    }
+
+    @media (min-width: $desktop-width) {
+      right: 15px;
     }
   }
 

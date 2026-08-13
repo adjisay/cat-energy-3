@@ -16,6 +16,7 @@
 
 .contacts__wrapper {
   display: flex;
+  flex-wrap: wrap;
   padding-block: 26px;
 
   @media (min-width: $tablet-width) {
@@ -25,12 +26,14 @@
 
   @media (min-width: $desktop-width) {
     position: absolute;
-    top: 95px;
+    top: 90px;
     z-index: 20;
-    padding-inline: 80px;
+    padding: 61px 80px;
     width: 565px;
     min-height: 199px;
+    max-height: 300px;
     background-color: $basic-white;
+    overflow-y: hidden;
   }
 }
 

@@ -10,7 +10,6 @@
   &--target::before {
     content: "";
     position: absolute;
-    bottom: -20px;
     left: 50%;
     width: 100vw;
     height: 1px;
@@ -21,6 +20,14 @@
       content: none;
     }
   }
+
+  &--personal::before {
+    bottom: -23px;
+  }
+
+  &--target::before {
+    bottom: -18px;
+  }
 }
 
 .field-group__list {
@@ -28,11 +35,11 @@
 
   display: flex;
   flex-direction: column;
-  row-gap: 14px;
+  row-gap: 13px;
 
   &--gap-m {
     @media (min-width: $tablet-width) {
-      row-gap: 20px;
+      row-gap: 17px;
     }
   }
 
@@ -48,6 +55,8 @@
   }
 
   &--additional {
+    row-gap: 12px;
+
     @media (min-width: $tablet-width) {
       flex-flow: row wrap;
       gap: 32px 60px;
@@ -63,6 +72,18 @@
       /* stylelint-disable-next-line max-nesting-depth */
       .field-group__item {
         flex-basis: 245px;
+      }
+    }
+  }
+
+  &--contacts {
+    @media (min-width: $desktop-width) {
+      flex-flow: row wrap;
+      column-gap: 80px;
+      /* stylelint-disable-next-line max-nesting-depth */
+      .field-group__item {
+        flex: 0 0 calc((100% - 80px) / 2);
+        word-break: break-all;
       }
     }
   }
@@ -89,6 +110,16 @@
       width: 30px;
       height: 30px;
       border: 1px solid $special-light-grey3;
+
+      &:not(:disabled):hover {
+        border-color: $special-light-grey8;
+      }
+
+      &:disabled,
+      &:disabled + .field-group__lead {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
 
       &:checked::before {
         content: "";
@@ -143,7 +174,8 @@
     right: 13px;
     width: 17px;
     height: 13px;
-    background-image: url("../../icons/stack.svg#icon-mail");
+    background-color: $special-black;
+    mask-image: url("../../icons/stack.svg#icon-mail");
 
     @media (min-width: $tablet-width) {
       right: 15px;
@@ -157,10 +189,11 @@
   &--phone::before {
     content: "";
     position: absolute;
-    right: 13px;
+    right: 15px;
     width: 15px;
     height: 15px;
-    background-image: url("../../icons/stack.svg#icon-phone");
+    background-color: $special-black;
+    mask-image: url("../../icons/stack.svg#icon-phone");
 
     @media (min-width: $tablet-width) {
       right: 15px;
@@ -170,12 +203,27 @@
       right: 17px;
     }
   }
+
+  &--email:focus-within::before,
+  &--phone:focus-within::before {
+    background-color: $basic-green;
+  }
+
+  &--email:has(:user-invalid)::before,
+  &--phone:has(:user-invalid)::before {
+    background-color: $basic-red;
+  }
 }
 
 .field-group__lead {
   font-family: $secondary-font;
   font-size: 16px;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+
+  &--no-shrink {
+    flex-shrink: 0;
+  }
 
   @media (min-width: $tablet-width) {
     @include font-resize(20px, 20px);
@@ -183,8 +231,10 @@
 }
 
 .field-group__input {
-  flex-grow: 1;
-  padding: 14px 15px;
+  flex: 1 1 auto;
+  padding: 10px 15px;
+  min-width: 0;
+  width: 100%;
   border: 1px solid $special-light-grey4;
   font-family: $secondary-font;
   font-size: 16px;
@@ -204,6 +254,23 @@
     outline: 1px solid $basic-red;
   }
 
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type="number"] {
+    appearance: textfield;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 11px 20px;
+
+    @include font-resize(20px, 20px);
+  }
+
   &--email,
   &--phone {
     padding-right: 40px;
@@ -218,12 +285,16 @@
     width: 100%;
     min-height: 150px;
     resize: none;
+
+    @media (min-width: $tablet-width) {
+      padding: 14px 20px;
+      min-height: 174px;
+    }
   }
 
-  @media (min-width: $tablet-width) {
-    padding: 11px 20px;
-
-    @include font-resize(20px, 20px);
+  &--checkbox,
+  &--radio {
+    cursor: pointer;
   }
 }
 
@@ -235,11 +306,22 @@
   padding-inline: 0 20px;
   width: fit-content;
   background-color: $basic-white;
+  overflow-wrap: anywhere;
 
   @include font($secondary-font, 24px, 26px, $basic-black);
   @include title-line-after(40px);
 
   &--contacts {
+    &::before {
+      top: 31%;
+      transform: translateY(-31%);
+      /* stylelint-disable-next-line max-nesting-depth */
+      @media (min-width: $tablet-width) {
+        top: 60%;
+        transform: translateY(-60%);
+      }
+    }
+
     @media (min-width: $tablet-width) {
       margin-bottom: 76px;
     }
@@ -253,7 +335,7 @@
     }
 
     @media (min-width: $desktop-width) {
-      margin-bottom: 72px;
+      margin-bottom: 75px;
     }
   }
 

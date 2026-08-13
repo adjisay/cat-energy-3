@@ -23,25 +23,25 @@
 .program-form__group:nth-child(2) {
   grid-area: target;
 
-  @include margin-bottom-resize(45px, 65px, 70px);
+  @include margin-bottom-resize(45px, 64px, 70px);
 }
 
 .program-form__group:nth-child(3) {
   grid-area: contacts;
 
-  @include margin-bottom-resize(24px, 65px, 70px);
+  @include margin-bottom-resize(23px, 64px, 70px);
 }
 
 .program-form__group:nth-child(4) {
   grid-area: comments;
 
-  @include margin-bottom-resize(23px, 65px, 70px);
+  @include margin-bottom-resize(19px, 62px, 70px);
 }
 
 .program-form__group:nth-child(5) {
   grid-area: additional;
 
-  @include margin-bottom-resize(34px, 52px, 60px);
+  @include margin-bottom-resize(34px, 51px, 57px);
 }
 
 .program-form__wrapper {
@@ -63,6 +63,7 @@
 
 .program-form__button {
   @media (min-width: $tablet-width) {
+    padding-block: 14px;
     flex: 0 0 calc((100% - 60px) / 2);
   }
 
@@ -80,6 +81,8 @@
   @media (min-width: $tablet-width) {
     flex: 0 0 calc((100% - 60px) / 2);
     text-align: left;
+
+    @include font-resize(16px, 16px);
   }
 
   @media (min-width: $desktop-width) {

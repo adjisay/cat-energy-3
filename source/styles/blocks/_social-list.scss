@@ -5,8 +5,12 @@
 
   display: flex;
   justify-content: space-between;
-  margin-left: 37px;
+  flex-wrap: wrap;
   width: 132px;
+
+  @media (min-width: $tablet-width) {
+    margin-left: 37px;
+  }
 }
 
 .social-list__item {
@@ -23,6 +27,11 @@
   &:focus-visible,
   &:active {
     background-color: $basic-green;
+  }
+
+  &:focus-within {
+    outline: 2px solid $base-color-text;
+    outline-offset: -22px;
   }
 
   &:active {

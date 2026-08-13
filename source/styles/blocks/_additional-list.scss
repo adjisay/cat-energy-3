@@ -24,7 +24,7 @@
     "title    title"
     "quantity price"
     "button   button";
-  row-gap: 13px;
+  row-gap: 14px;
   padding-top: 13px;
   line-height: 14px;
 
@@ -56,19 +56,20 @@
     grid-template-areas:
       "title  quantity price"
       "button button   button";
-    gap: 25px 49px;
-    padding: 26px 38px 28px;
+    gap: 24px 53px;
+    padding: 26px 36px 28px 37px;
     border: 1px solid $special-light-grey3;
 
     @include font-resize(16px, 20px);
   }
 
   @media (min-width: $desktop-width) {
-    grid-template-columns: 1fr 200px 42px 244px;
+    grid-template-columns: 1fr 204px 42px 244px;
     grid-template-areas: "title quantity price button";
     align-items: center;
     gap: 0 40px;
     padding: 15px 0;
+    min-height: 72px;
     border-left: none;
     border-right: none;
   }
@@ -79,6 +80,7 @@
   margin-block: 0;
   font-weight: 400;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 
   @include font($secondary-font, 16px, 16px, $special-dark-grey);
 
@@ -104,6 +106,10 @@
   justify-self: end;
 
   @media (min-width: $tablet-width) {
+    justify-self: center;
+  }
+
+  @media (min-width: $desktop-width) {
     justify-self: start;
   }
 }
@@ -111,4 +117,5 @@
 .additional-list__item-link {
   grid-area: button;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
