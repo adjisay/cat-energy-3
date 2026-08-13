@@ -13,6 +13,8 @@
       url("../../images/mobile/2x/gift-background-mobile@2x.png") type("image/png") 2x
     );
 
+  background-size: cover;
+
   &::before {
     content: "";
     position: absolute;

@@ -1,7 +1,5 @@
 @use "../common" as *;
 
-$background-gray-color: #4c4b50;
-
 .hero {
   position: relative;
   min-height: 480px;
@@ -43,7 +41,6 @@ $background-gray-color: #4c4b50;
       ),
       linear-gradient(to right, rgba($basic-white, 0) 50%, $background-gray-color 50%, #4c4b50 100%);
     background-position: top, calc(50% + 521px);
-    background-size: contain;
   }
 }
 
@@ -64,6 +61,7 @@ $background-gray-color: #4c4b50;
 
   @media (min-width: $desktop-width) {
     margin-left: 80px;
+    width: 416px;
   }
 }
 
@@ -80,6 +78,7 @@ $background-gray-color: #4c4b50;
   @media (min-width: $desktop-width) {
     margin-left: 80px;
     margin-bottom: 52px;
+    width: 416px;
   }
 }
 

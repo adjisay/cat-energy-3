@@ -80,6 +80,7 @@
   margin-block: 0;
   font-weight: 400;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 
   @include font($secondary-font, 16px, 16px, $special-dark-grey);
 
@@ -116,4 +117,5 @@
 .additional-list__item-link {
   grid-area: button;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }

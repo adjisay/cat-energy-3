@@ -8,41 +8,42 @@
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
+  overflow-wrap: anywhere;
 
   @include font($secondary-font, 16px, 20px, $basic-white);
 
-  &:hover:not(:disabled),
-  &:focus-visible:not(:disabled),
-  &:active:not(:disabled) {
+  &:not(:disabled):hover,
+  &:not(:disabled):focus-visible,
+  &:not(:disabled):active {
     background-color: $special-green;
   }
 
-  &:active:not(:disabled) {
+  &:not(:disabled):active {
     color: rgba($basic-white, 0.3);
   }
 
   &:disabled {
     opacity: 0.4;
-    cursor: default;
+    cursor: not-allowed;
   }
 
   &--alternate {
     background-color: $basic-grey;
     color: $base-color-text;
 
-    &:hover:not(:disabled),
-    &:focus-visible:not(:disabled),
-    &:active:not(:disabled) {
+    &:not(:disabled):hover,
+    &:not(:disabled):focus-visible,
+    &:not(:disabled):active {
       background-color: $special-light-grey2;
     }
 
-    &:active:not(:disabled) {
+    &:not(:disabled):active {
       color: rgba($base-color-text, 0.3);
     }
 
     &:disabled {
       opacity: 0.4;
-      cursor: default;
+      cursor: not-allowed;
     }
   }
 

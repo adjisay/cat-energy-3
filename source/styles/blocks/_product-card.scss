@@ -110,6 +110,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   &::before {
     @media (min-width: $tablet-width) {
@@ -129,10 +130,12 @@
 
 .product-card__spec-value {
   margin-left: 0;
+  overflow-wrap: anywhere;
 }
 
 .product-card__link {
   grid-area: button;
   align-self: center;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }

@@ -78,7 +78,7 @@
 
   &--contacts {
     @media (min-width: $desktop-width) {
-      flex-direction: row;
+      flex-flow: row wrap;
       column-gap: 80px;
       /* stylelint-disable-next-line max-nesting-depth */
       .field-group__item {
@@ -110,6 +110,16 @@
       width: 30px;
       height: 30px;
       border: 1px solid $special-light-grey3;
+
+      &:not(:disabled):hover {
+        border-color: $special-light-grey8;
+      }
+
+      &:disabled,
+      &:disabled + .field-group__lead {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
 
       &:checked::before {
         content: "";
@@ -164,7 +174,8 @@
     right: 13px;
     width: 17px;
     height: 13px;
-    background-image: url("../../icons/stack.svg#icon-mail");
+    background-color: $special-black;
+    mask-image: url("../../icons/stack.svg#icon-mail");
 
     @media (min-width: $tablet-width) {
       right: 15px;
@@ -181,7 +192,8 @@
     right: 15px;
     width: 15px;
     height: 15px;
-    background-image: url("../../icons/stack.svg#icon-phone");
+    background-color: $special-black;
+    mask-image: url("../../icons/stack.svg#icon-phone");
 
     @media (min-width: $tablet-width) {
       right: 15px;
@@ -191,12 +203,27 @@
       right: 17px;
     }
   }
+
+  &--email:focus-within::before,
+  &--phone:focus-within::before {
+    background-color: $basic-green;
+  }
+
+  &--email:has(:user-invalid)::before,
+  &--phone:has(:user-invalid)::before {
+    background-color: $basic-red;
+  }
 }
 
 .field-group__lead {
   font-family: $secondary-font;
   font-size: 16px;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+
+  &--no-shrink {
+    flex-shrink: 0;
+  }
 
   @media (min-width: $tablet-width) {
     @include font-resize(20px, 20px);
@@ -204,8 +231,10 @@
 }
 
 .field-group__input {
-  flex-grow: 1;
+  flex: 1 1 auto;
   padding: 10px 15px;
+  min-width: 0;
+  width: 100%;
   border: 1px solid $special-light-grey4;
   font-family: $secondary-font;
   font-size: 16px;
@@ -225,6 +254,17 @@
     outline: 1px solid $basic-red;
   }
 
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type="number"] {
+    appearance: textfield;
+  }
+
   @media (min-width: $tablet-width) {
     padding: 11px 20px;
 
@@ -239,6 +279,7 @@
       padding-right: 50px;
     }
   }
+
   &--comments {
     padding-inline: 14px;
     width: 100%;
@@ -250,6 +291,11 @@
       min-height: 174px;
     }
   }
+
+  &--checkbox,
+  &--radio {
+    cursor: pointer;
+  }
 }
 
 .field-group__title {
@@ -260,6 +306,7 @@
   padding-inline: 0 20px;
   width: fit-content;
   background-color: $basic-white;
+  overflow-wrap: anywhere;
 
   @include font($secondary-font, 24px, 26px, $basic-black);
   @include title-line-after(40px);
@@ -268,7 +315,7 @@
     &::before {
       top: 31%;
       transform: translateY(-31%);
-
+      /* stylelint-disable-next-line max-nesting-depth */
       @media (min-width: $tablet-width) {
         top: 60%;
         transform: translateY(-60%);

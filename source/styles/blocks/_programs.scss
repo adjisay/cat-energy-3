@@ -153,6 +153,7 @@
   margin-left: 70px;
   font-weight: 400;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 
   @include font($secondary-font, 24px, 37px, $basic-black);
 
@@ -203,7 +204,7 @@
     content: "";
     position: absolute;
     top: 1px;
-    right: 8px;
+    left: calc(100% - 32px);
     width: 24px;
     height: 12px;
     background-image: url("../../icons/stack.svg#icon-arrow");

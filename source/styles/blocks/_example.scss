@@ -36,6 +36,7 @@
 
   @media (min-width: $desktop-width) {
     margin-bottom: 146px;
+    width: 635px;
   }
 }
 
@@ -75,6 +76,7 @@
   @include list-style;
 
   display: flex;
+  flex-wrap: wrap;
   column-gap: 32px;
   margin-bottom: 34px;
 
@@ -118,7 +120,6 @@
   left: 50%;
   margin: 0;
   padding-inline: 14px;
-  height: 24px;
   background-color: $special-light-grey;
   transform: translateX(-50%);
 

@@ -5,6 +5,7 @@
 
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 132px;
 
   @media (min-width: $tablet-width) {
@@ -26,6 +27,11 @@
   &:focus-visible,
   &:active {
     background-color: $basic-green;
+  }
+
+  &:focus-within {
+    outline: 2px solid $base-color-text;
+    outline-offset: -22px;
   }
 
   &:active {

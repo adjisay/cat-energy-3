@@ -16,7 +16,7 @@
 .page-footer__container {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   align-items: center;
   gap: 40px;
 
