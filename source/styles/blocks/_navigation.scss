@@ -146,6 +146,7 @@
   text-decoration: none;
   color: inherit;
   overflow-wrap: break-word;
+  transition: color 0.2s ease;
 
   .no-js & {
     background-color: transparent;
