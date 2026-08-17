@@ -53,6 +53,7 @@
   border: none;
   background-color: $special-grey;
   transform: translate(-50%, -50%);
+  transition: background-color 0.2s ease;
   touch-action: none;
   cursor: grab;
 
@@ -78,6 +79,7 @@
     border: 2px solid $special-grey;
     background: $basic-white;
     transform: translate(-50%, -50%);
+    transition: border-color 0.2s ease;
   }
 
   &:hover::before,
@@ -93,6 +95,7 @@
     mask-image: url("../../icons/stack.svg#icon-arrow-inner");
     background-color: $special-grey;
     transform: translate(-50%, -50%);
+    transition: background-color 0.2s ease;
   }
 
   &:hover::after,

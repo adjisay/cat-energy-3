@@ -1,6 +1,8 @@
 @use "../common" as *;
 
 .logo {
+  transition: opacity 0.3s ease;
+
   &:hover,
   &:focus-visible {
     opacity: 0.8;
