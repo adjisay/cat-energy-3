@@ -21,6 +21,8 @@ body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: $basic-white;
   font-family: $primary-font;
   font-size: 14px;
